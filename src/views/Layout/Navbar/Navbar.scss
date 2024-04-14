@@ -1,0 +1,23 @@
+.navbar {
+    @media only screen and (max-width: 991px) {
+        background-color: var(--white-color) !important;
+
+      }
+.Nabar-logo{
+    height: 30px;
+    @media only screen and (min-width: 991px) {
+        height: 70px;
+      }
+}
+@media only screen and (min-width: 991px) {
+    .nav-link{
+        padding:8px 30px !important;
+    }
+    .sign-up{
+        border: 1px solid var(--dark-gray);
+        border-radius: 4px;
+        padding: 16px;
+    }
+  }
+
+}
