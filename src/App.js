@@ -1,6 +1,5 @@
 // src/App.js
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss"; // Import your global Sass file
 import AppRouter from "./AppRouter";
 import Layout from "./views/Layout/Layout";
