@@ -1,3 +1,73 @@
-.footer {
-    color: blue;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer {
+        position: relative;
+        color: var(--blue-grey);
+        .footer-bg{
+            width: 300px;
+            height: 500px;
+            opacity: 0.6;
+            background: linear-gradient(140deg,#fff , #fff, #fff, #D5AEE4);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+        }
+        .footer-desc{
+        font-size: 16px;
+        margin-top: 17px;
+        }
+        .footer-note{
+            text-align: center;
+            font-size:14px;
+            margin-top: 24px;
+        }
+        .footer-title{
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--drak);
+            margin-bottom: 48px;
+        }
+        .footer-links{
+            padding-left: 0;
+
+        .footer-link{
+            list-style: none;
+            font-weight: 500;
+            margin-bottom:12px;
+        }
+
+    }
+    .Soical-icons{
+        @include flex-center;
+        gap: 16px;
+        .Soical-icon{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--white-color);
+            box-shadow: 0px 2px 20px #0000001A;
+            @include flex-center ;
+        }
+    }
+    .Discover-title{
+        color: var(--blue-grey);
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    .Discover-container{
+        @include flex-center ;
+        gap: 16px;
+
+        .Discover-btns{
+            width: 120px;
+            border-radius: 10px;
+        }
+        }
    }
