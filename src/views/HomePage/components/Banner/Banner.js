@@ -3,6 +3,7 @@ import "./Banner.scss";
 import MainBtn from "../../../common/MainBtn/MainBtn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import Line from "./Line";
 
 const Banner = () => {
   const [slides, setSlides] = useState([]);
@@ -83,7 +84,14 @@ const Banner = () => {
                 >
                   {slide.category}
                 </h2>
-                <h3 className="title">{slide.title}</h3>
+
+                <h3 className="title">
+                  {slide.title}
+                  <Line
+                    className="Line"
+                    color={`#${slide.colorCode}`} // Set color dynamically
+                  />
+                </h3>
                 <p className="brief">{slide.brief}</p>
                 <div className="Btn-container mt-5">
                   <MainBtn> Find Out More</MainBtn>

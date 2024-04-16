@@ -42,9 +42,10 @@
          margin-right: 5%;
          text-align: start;
          z-index: 3;
-         top:45%;
+         top:50%;
          transform: translateY(-50%);
-        
+         left: 0;
+         right:0;
          .category{
             font-size: 16px;
             margin-bottom: 8px;
@@ -54,6 +55,19 @@
          .title{
             font-size: 24px;
             font-weight: 700;
+            position: relative;
+         }
+         .Line{
+            position: absolute;
+            right:0;
+             top:-40%;
+             z-index: -1;
+             animation: moveLine 1s linear forwards;
+             @media only screen and (min-width: 991px) {
+               right:20%;
+             top:5%;
+            }
+
          }
          .brief{
             font-size: 12px;
@@ -66,13 +80,15 @@
           
             .Play-icon{
                color: red;
-               font-size: 50px;
+               font-size: 30px;
               
             }
          }
          @media only screen and (min-width: 991px) {
             margin-right: 15%;
             margin-left: 15%;
+            left: 15%;
+           right:15%;
             transform: translate(-50%, -50%);
             max-width: 600px;
             .category{
@@ -88,6 +104,10 @@
             .play-btn{
                gap: 10px;
                margin-left: 16px;
+               .Play-icon{
+                  font-size: 50px;
+                 
+               }
             }
          }
       }
@@ -146,6 +166,14 @@
    }
    to {
      transform: translate(20px, -10px); /* Move to the right by 20 pixels */
+   }
+ }
+ @keyframes moveLine {
+   from {
+     transform: skew(5deg, 5deg) /* Start from its original position */
+   }
+   to {
+     transform: skew(-2deg, -2deg);; /* Move to the right by 20 pixels */
    }
  }
 

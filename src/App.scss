@@ -1,2 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 @import './variables'; // Import your global theme files
+.main-color{
+    color: var(--main-color);
+}
+.blue-grey-color
+{
+    color: var(--blue-grey);
+}
