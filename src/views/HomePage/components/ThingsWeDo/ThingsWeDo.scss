@@ -1,4 +1,158 @@
+// Variables
+$text-stroke-width: 1px;
+$text-stroke-color: #ccc;
+
+
+// Mixin for Vendor Prefixes
+@mixin text-stroke($width, $color) {
+  -webkit-text-stroke-width: $width;
+  -webkit-text-stroke-color: $color;
+}
+
 .ThingsWeDo {
-   height: 500px;
-   background-color: beige;
+  background-color: #eee;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0 100px 0;
+
+  .bg-text {
+    @include text-stroke($text-stroke-width, $text-stroke-color);
+    font-size: 150px;
+    max-width: 600px;
+    font-weight: bolder;
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: -105px;
+    line-height: normal;
   }
+
+  .bg-color {
+    background-color: var(--bink-color);
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    right: 0;
+    top: 5%;
+    @media only screen and (min-width: 991px) {
+      width: calc((100vw / 2) + (104px)); 
+      height: 70%;
+      top: 50%;
+      bottom: 50%;
+      transform: translateY(-50%);
+    }
+    @media only screen and (min-width: 1200px) {
+      width: calc((100vw / 2) + (125px));
+      height: 70%;
+      top: 50%;
+      bottom: 50%;
+      transform: translateY(-50%);
+    }
+    @media only screen and (min-width: 1400px) {
+      width: calc((100vw / 2) + (144px));
+      height: 70%;
+      top: 50%;
+      bottom: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .text-container {
+    position: relative;
+
+    .header {
+      .title {
+        font-size: 55px;
+        color: var(--blue-color);
+      }
+    }
+  }
+
+  .cards-col-container {
+    @media only screen and (min-width: 991px) {
+      display: flex;
+      height: 100%;
+      align-items: flex-end;
+
+      .do-card {
+        &:hover {
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+
+  .cards-2-col-container {
+    @media only screen and (min-width: 991px) {
+      position: relative;
+      top: 125px; //half of one card height
+    }
+  }
+
+  .do-card {
+    width: 100%;
+    height: 250px;
+    position: relative;
+
+    .do-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center left;
+    }
+
+    .do-text {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      padding: 24px;
+    }
+
+    .do-text-stroke {
+      @include text-stroke(0.5px, var(--white-color));
+      color: transparent;
+      position: absolute;
+      z-index: 1;
+      top: 46%;
+      padding: 16px;
+      opacity: 0.6;
+    }
+
+    .do-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(37, 55, 118, 0.4);
+      transition: all linear 0.3s;
+      color: var(--white-color);
+      padding: 24px;
+      display: flex;
+      align-items: flex-end;
+
+      .read-more {
+        opacity: 0;
+        margin-bottom: 0;
+        transition: all linear 0.4s;
+      }
+    }
+
+    &:hover {
+      .do-overlay {
+        background-color: rgba(37, 55, 118, 0.8);
+
+        .read-more {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
